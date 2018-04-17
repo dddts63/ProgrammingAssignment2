@@ -16,28 +16,18 @@ ResultTest <- cacheSolve(MatrixTest)
 Result <- all(abs(ResultRef-ResultTest)<0.00001)
 print(sprintf(" Result from test Case 2: %s",Result))
 
-
 #Case 3
-Testcase <- matrix(c(1:1024),nrow=32,  ncol=32)
+Testcase <- matrix(rexp(1024, rate=.1),nrow=32,  ncol=32)
 ResultRef <- solve(Testcase)
 MatrixTest <- makeCacheMatrix(Testcase)
 ResultTest <- cacheSolve(MatrixTest)
 Result <- all(abs(ResultRef-ResultTest)<0.00001)
 print(sprintf(" Result from test Case 3: %s",Result))
 
-
 #Case 4
-Testcase <- matrix(rexp(1024, rate=.1),nrow=32,  ncol=32)
-ResultRef <- solve(Testcase)
-MatrixTest <- makeCacheMatrix(Testcase)
-ResultTest <- cacheSolve(MatrixTest)
-Result <- all(abs(ResultRef-ResultTest)<0.00001)
-print(sprintf(" Result from test Case 4: %s",Result))
-
-#Case 5
 Testcase <- matrix(C(1,0,0,0,1,0,0,0,1),nrow=3,  ncol=3)
 ResultRef <- solve(Testcase)
 MatrixTest <- makeCacheMatrix(Testcase)
 ResultTest <- cacheSolve(MatrixTest)
 Result <- all(abs(ResultRef-ResultTest)<0.00001)
-print(sprintf(" Result from test Case 5: %s",Result))
+print(sprintf(" Result from test Case 4: %s",Result))
